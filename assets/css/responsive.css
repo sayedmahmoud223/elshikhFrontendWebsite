@@ -1,0 +1,28 @@
+/* الهواتف */
+@media (max-width: 767.98px) {
+    .navbar-brand img {
+        height: 30px !important;
+    }
+
+    .search-container .form-control {
+        width: 120px !important;
+    }
+
+    .search-container .form-control:focus {
+        width: 150px !important;
+    }
+
+    .navbar-nav {
+        background-color: #f8f9fa;
+        border-radius: 0.25rem;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* الأجهزة اللوحية */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .search-container .form-control {
+        width: 130px !important;
+    }
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التمور</title>
+    <!-- flags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
+
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+
+    <div id="cart-sidebar" class="cart-sidebar shadow d-flex flex-column">
+        <div class="cart-header text-light main-bg d-flex justify-content-between align-items-center p-3 border-bottom">
+            <h5 class="mb-0">سلة المشتريات</h5>
+            <button id="close-cart" class="main-bg btn btn-close-white">
+                <i class="text-light bi bi-x"></i>
+            </button>
+        </div>
+
+        <div class="cart-body p-3 flex-grow-1 overflow-auto" id="cart-items">
+            <p class="text-muted empty-cart">السلة فارغة</p>
+        </div>
+
+        <div class="cart-footer p-3 border-top">
+            <button class="shiny-button w-100 fw-bold">ادفع الآن</button>
+        </div>
+    </div>
+
+
+
+    <div class="container my-4">
+        <div class="row">
+            <!-- Filter Sidebar -->
+            <div class="col-md-3 mb-4">
+                <div class="filter-box border rounded p-3 bg-light">
+                    <h5 class="mb-3">فلترة المنتجات</h5>
+                    <select class="form-select mb-2" onchange="handleFilterChange(this.value)">
+                        <option selected disabled>اختر طريقة الفرز</option>
+                        <option value="best-selling">الأكثر مبيعاً</option>
+                        <option value="newest">التاريخ: الأحدث إلى الأقدم</option>
+                        <option value="oldest">التاريخ: الأقدم إلى الأحدث</option>
+                        <option value="az">ترتيب أبجدي: أ - ى</option>
+                        <option value="za">ترتيب أبجدي: ى - أ</option>
+                        <option value="price-high-low">السعر: الأعلى إلى الأقل</option>
+                        <option value="price-low-high">السعر: الأقل إلى الأعلى</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="col-md-9 reveal">
+                <div class="row g-4" id="product-list">
+                    <section id="products" class="title my-4">
+                        <div class="container d-flex justify-content-center align-items-center">
+                            <div
+                                class="content shiny-button best-offer-content border border-2 p-3 w-50 text-center text-light">
+                                <h3>التمور</h3>
+                            </div>
+                        </div>
+                        <div class="products py-2 my-3">
+                            <div class="container">
+                                <div class="row g-4">
+                                    <!-- Start Product Card -->
+                                    <div class="col-md-4 col-sm-6 col-6">
+                                        <div class="item border p-0">
+                                            <div class="image-side p-0">
+                                                <a href="productDetails.html">
+                                                    <img src="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg"
+                                                        alt="صورة المنتج" class="img-fluid first" />
+                                                    <img src="/assets/images/14875068_9a9b6841-4baa-449b-9d0d-c4b6cab4c1e7.jpg"
+                                                        alt="صورة المنتج الثانية" class="img-fluid second" />
+                                                </a>
+                                            </div>
+                                            <div class="content-side p-2">
+                                                <p>
+                                                    احصل على كيس قهوة الشيخ + طحينية الشيخ + مكسرات الشيخ مجاناً عند
+                                                    شراء عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ (2 كيلوغرام)
+                                                </p>
+                                                <p>122 <strong>Sr</strong></p>
+                                                <button class="shiny-button w-100 add-to-cart" data-id="123"
+                                                    data-title="كيس قهوة + طحينية + تمر صقعي ملكي" data-price="122"
+                                                    data-image="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg">
+                                                    اضف الي السله
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Repeat Product Card 5 more times -->
+                                    <div class="col-md-4 col-sm-6 col-6">
+                                        <div class="item border p-0">
+                                            <div class="image-side p-0">
+                                                <a href="productDetails.html">
+                                                    <img src="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg"
+                                                        alt="صورة المنتج" class="img-fluid first" />
+                                                    <img src="/assets/images/14875068_9a9b6841-4baa-449b-9d0d-c4b6cab4c1e7.jpg"
+                                                        alt="صورة المنتج الثانية" class="img-fluid second" />
+                                                </a>
+                                            </div>
+                                            <div class="content-side p-2">
+                                                <p>
+                                                    احصل على كيس قهوة الشيخ + طحينية الشيخ + مكسرات الشيخ مجاناً عند
+                                                    شراء عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ (2 كيلوغرام)
+                                                </p>
+                                                <p>122 <strong>Sr</strong></p>
+                                                <button class="shiny-button w-100 add-to-cart" data-id="123"
+                                                    data-title="كيس قهوة + طحينية + تمر صقعي ملكي" data-price="122"
+                                                    data-image="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg">
+                                                    اضف الي السله
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-6 col-6">
+                                        <div class="item border p-0">
+                                            <div class="image-side p-0">
+                                                <a href="productDetails.html">
+                                                    <img src="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg"
+                                                        alt="صورة المنتج" class="img-fluid first" />
+                                                    <img src="/assets/images/14875068_9a9b6841-4baa-449b-9d0d-c4b6cab4c1e7.jpg"
+                                                        alt="صورة المنتج الثانية" class="img-fluid second" />
+                                                </a>
+                                            </div>
+                                            <div class="content-side p-2">
+                                                <p>
+                                                    احصل على كيس قهوة الشيخ + طحينية الشيخ + مكسرات الشيخ مجاناً عند
+                                                    شراء عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ (2 كيلوغرام)
+                                                </p>
+                                                <p>122 <strong>Sr</strong></p>
+                                                <button class="shiny-button w-100 add-to-cart" data-id="123"
+                                                    data-title="كيس قهوة + طحينية + تمر صقعي ملكي" data-price="122"
+                                                    data-image="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg">
+                                                    اضف الي السله
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-6 col-6">
+                                        <div class="item border p-0">
+                                            <div class="image-side p-0">
+                                                <a href="productDetails.html">
+                                                    <img src="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg"
+                                                        alt="صورة المنتج" class="img-fluid first" />
+                                                    <img src="/assets/images/14875068_9a9b6841-4baa-449b-9d0d-c4b6cab4c1e7.jpg"
+                                                        alt="صورة المنتج الثانية" class="img-fluid second" />
+                                                </a>
+                                            </div>
+                                            <div class="content-side p-2">
+                                                <p>
+                                                    احصل على كيس قهوة الشيخ + طحينية الشيخ + مكسرات الشيخ مجاناً عند
+                                                    شراء عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ (2 كيلوغرام)
+                                                </p>
+                                                <p>122 <strong>Sr</strong></p>
+                                                <button class="shiny-button w-100 add-to-cart" data-id="123"
+                                                    data-title="كيس قهوة + طحينية + تمر صقعي ملكي" data-price="122"
+                                                    data-image="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg">
+                                                    اضف الي السله
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-6 col-6">
+                                        <div class="item border p-0">
+                                            <div class="image-side p-0">
+                                                <a href="productDetails.html">
+                                                    <img src="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg"
+                                                        alt="صورة المنتج" class="img-fluid first" />
+                                                    <img src="/assets/images/14875068_9a9b6841-4baa-449b-9d0d-c4b6cab4c1e7.jpg"
+                                                        alt="صورة المنتج الثانية" class="img-fluid second" />
+                                                </a>
+                                            </div>
+                                            <div class="content-side p-2">
+                                                <p>
+                                                    احصل على كيس قهوة الشيخ + طحينية الشيخ + مكسرات الشيخ مجاناً عند
+                                                    شراء عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ (2 كيلوغرام)
+                                                </p>
+                                                <p>122 <strong>Sr</strong></p>
+                                                <button class="shiny-button w-100 add-to-cart" data-id="123"
+                                                    data-title="كيس قهوة + طحينية + تمر صقعي ملكي" data-price="122"
+                                                    data-image="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg">
+                                                    اضف الي السله
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-6 col-6">
+                                        <div class="item border p-0">
+                                            <div class="image-side p-0">
+                                                <a href="productDetails.html">
+                                                    <img src="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg"
+                                                        alt="صورة المنتج" class="img-fluid first" />
+                                                    <img src="/assets/images/14875068_9a9b6841-4baa-449b-9d0d-c4b6cab4c1e7.jpg"
+                                                        alt="صورة المنتج الثانية" class="img-fluid second" />
+                                                </a>
+                                            </div>
+                                            <div class="content-side p-2">
+                                                <p>
+                                                    احصل على كيس قهوة الشيخ + طحينية الشيخ + مكسرات الشيخ مجاناً عند
+                                                    شراء عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ (2 كيلوغرام)
+                                                </p>
+                                                <p>122 <strong>Sr</strong></p>
+                                                <button class="shiny-button w-100 add-to-cart" data-id="123"
+                                                    data-title="كيس قهوة + طحينية + تمر صقعي ملكي" data-price="122"
+                                                    data-image="/assets/images/14420274_212787e6-009a-4905-9205-517b3b2f2113.jpg">
+                                                    اضف الي السله
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Product Cards -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact us -->
+    <section id="contact-us">
+        <div class="fixed-contact-icons">
+            <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="contact-icon whatsapp" aria-label="WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="tel:+966XXXXXXXXX" class="contact-icon phone" aria-label="Phone">
+                <i class="bi bi-telephone-fill"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

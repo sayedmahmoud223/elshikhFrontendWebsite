@@ -1,0 +1,56 @@
+<nav class="navbar position-fixed top-0 start-0 end-0 navbar-expand-lg navbar-light border-bottom py-3 ">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold text-white" href="../index.html">
+            <img src="/assets/images/logo.png" alt="تمور الشيخ" height="50">
+        </a>
+
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul
+                class="navbar-nav mb-2 mb-lg-0 d-flex flex-column flex-lg-row me-auto main-color w-100 text-end mt-3 mt-lg-0">
+                <a class="nav-link" href="index.html">الرئيسية</a>
+                <a class="nav-link" href="products.html">المنتجات</a>
+                <a class="nav-link" href="pakages.html">البكجات</a>
+                <a class="nav-link" href="dates.html">التمور</a>
+                <a class="nav-link" href="bestSellers.html">الأكثر مبيعا</a>
+                <a class="nav-link" href="contact.html">تواصل معنا</a>
+                <a class="nav-link" href="login.html">تسجيل الدخول</a>
+            </ul>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+
+            <input class="form-control form-control-sm d-inline-block" type="search" placeholder="ابحث..."
+                aria-label="بحث" style="max-width: 160px;" />
+
+            <div class="dropdown">
+                <button class="btn btn-light btn-sm dropdown-toggle d-flex align-items-center" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/assets/images/saudi.png" alt="السعودية" width="20" class="me-1"> السعودية
+                </button>
+                <ul class="dropdown-menu text-end">
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <img src="/assets/images/saudi.png" width="20" class="me-2"> السعودية
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <img src="/assets/images/qwait.png" width="20" class="me-2"> الكويت
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <button id="cart-button" class="btn btn-outline-light position-relative">
+                🛒
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </button>
+        </div>
+    </div>
+</nav>
