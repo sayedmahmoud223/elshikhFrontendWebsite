@@ -132,7 +132,7 @@ body {
 
 .main-content {
     height: 280px;
-    background-image: url("/assets/images/main-content.webp")
+    background-image: url("../images/main-content.webp")
 }
 
 /*end main content */
