@@ -1,7 +1,7 @@
 body {
     font-family: 'Cairo', sans-serif;
     background-color: #f8f9fa;
-    padding-top: 80px;
+    padding-top: 90px;
 }
 
 /* colors */
@@ -345,3 +345,38 @@ body {
 .contact-icon:hover {
     transform: scale(1.1);
 }
+
+/* orders */
+.order-card {
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.order-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.order-img-wrapper {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .order-img-wrapper {
+        width: 100%;
+        height: 220px;
+    }
+
+    .order-image {
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+/*end orders */

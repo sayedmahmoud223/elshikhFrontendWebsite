@@ -26,25 +26,33 @@
     <div id="navbar-placeholder"></div>
 
 
+    <!-- تسجيل الدخول -->
     <section id="login" class="main-bg w-100 vh-100 d-flex justify-content-center align-items-center">
         <div class="login-form bg-light rounded p-4 shadow w-100" style="max-width: 400px">
             <div class="text-center mb-4">
                 <img src="assets/images/logo.png" alt="Alshykh Logo" width="100">
                 <h4 class="mt-3 fw-bold">تسجيل الدخول</h4>
-                <p class="text-muted">أدخل بريدك الإلكتروني وسنرسل لك رمز تسجيل الدخول</p>
+                <p class="text-muted">أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول</p>
             </div>
             <form id="loginForm">
                 <div class="mb-3">
-                    <label for="email" class="form-label">البريد الإلكتروني</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="example@example.com"
-                        required>
+                    <label for="loginEmail" class="form-label">البريد الإلكتروني</label>
+                    <input type="email" class="form-control" id="loginEmail" name="email"
+                        placeholder="example@example.com">
                 </div>
-
-                <button type="submit" class="shiny-button w-100 rounded-pill">إرسال الرمز</button>
+                <div class="mb-3">
+                    <label for="loginPassword" class="form-label">كلمة المرور</label>
+                    <input type="password" class="form-control" id="loginPassword" name="password"
+                        placeholder="********">
+                </div>
+                <button type="submit" class="shiny-button w-100 rounded-pill">تسجيل الدخول</button>
             </form>
-
             <div id="loginAlert" class="alert mt-3 d-none text-center"></div>
+            <p class="text-center mt-3">
+                قوم بانشاء حساي جديد <a href="register.html" class="text-decoration-none">انشاء حساب جديد</a>
+            </p>
         </div>
+
     </section>
 
 

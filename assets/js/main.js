@@ -48,7 +48,7 @@ $(document).ready(function () {
             }
         });
     });
-    
+
 
 
     // تحميل الهيدر والتعامل مع روابط التنقل
@@ -286,62 +286,99 @@ $(document).ready(function () {
     //         .text(message);
     // }
 
+    // Handle Login Form
     $('#loginForm').on('submit', function (e) {
         e.preventDefault();
 
-        const email = $('#email').val().trim();
-        const alertBox = $('#loginAlert');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Clear previous errors
+        $('#loginForm .error').remove();
 
-        // ✅ لو الإيميل فاضي
-        if (email === '') {
-            alertBox
-                .removeClass('d-none')
-                .removeClass('alert-success')
-                .addClass('alert-danger')
-                .text('من فضلك أدخل بريدك الإلكتروني');
-            return;
+        let isValid = true;
+
+        // Email Validation
+        const email = $('#loginEmail').val().trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            $('#loginEmail').after('<div class="error text-danger mt-1">البريد الإلكتروني مطلوب</div>');
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            $('#loginEmail').after('<div class="error text-danger mt-1">صيغة البريد غير صحيحة</div>');
+            isValid = false;
         }
 
-        // ✅ لو الإيميل مش صحيح
-        if (!emailRegex.test(email)) {
-            alertBox
-                .removeClass('d-none')
-                .removeClass('alert-success')
-                .addClass('alert-danger')
-                .text('من فضلك أدخل بريد إلكتروني صحيح');
-            return;
+        // Password Validation
+        const password = $('#loginPassword').val().trim();
+        if (!password) {
+            $('#loginPassword').after('<div class="error text-danger mt-1">كلمة المرور مطلوبة</div>');
+            isValid = false;
+        } else if (password.length < 6) {
+            $('#loginPassword').after('<div class="error text-danger mt-1">كلمة المرور يجب أن تكون 6 أحرف على الأقل</div>');
+            isValid = false;
         }
 
-        // ✅ لو الإيميل صحيح
-        alertBox.addClass('d-none');
+        // Submit if valid
+        if (isValid) {
+            // Do your submit here (e.g., send data to API)
+            alert("تم التحقق بنجاح ✅");
+        }
+      });
 
-        // انتقال للصفحة التالية
-        window.location.href = '/loginVervicationCode.html';
-    });
-
-    $('#verifyForm').on('submit', function (e) {
+    // Handle Register Form
+    $('#registerForm').on('submit', function (e) {
         e.preventDefault();
 
-        const code = $('#code').val().trim();
-        const alertBox = $('#verifyAlert');
+        // Clear previous errors
+        $('#registerForm .error').remove();
 
-        if (!/^\d{6}$/.test(code)) {
-            alertBox
-                .removeClass('d-none')
-                .removeClass('alert-success')
-                .addClass('alert-danger')
-                .text('من فضلك أدخل الكود المكوّن من 6 أرقام فقط');
-            return;
+        let isValid = true;
+
+        // Name
+        const name = $('#registerName').val().trim();
+        if (!name) {
+            $('#registerName').after('<div class="error text-danger mt-1">الاسم مطلوب</div>');
+            isValid = false;
         }
 
-        // ✅ الكود صحيح
-        alertBox.addClass('d-none');
+        // Email
+        const email = $('#registerEmail').val().trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            $('#registerEmail').after('<div class="error text-danger mt-1">البريد الإلكتروني مطلوب</div>');
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            $('#registerEmail').after('<div class="error text-danger mt-1">صيغة البريد غير صحيحة</div>');
+            isValid = false;
+        }
 
-        // ممكن تحط هنا أي عملية تحقق أو نقل للصفحة التالية
-        alert('✅ تم التحقق من الكود بنجاح!');
-    });
+        // Password
+        const password = $('#registerPassword').val().trim();
+        if (!password) {
+            $('#registerPassword').after('<div class="error text-danger mt-1">كلمة المرور مطلوبة</div>');
+            isValid = false;
+        } else if (password.length < 6) {
+            $('#registerPassword').after('<div class="error text-danger mt-1">كلمة المرور يجب أن تكون 6 أحرف على الأقل</div>');
+            isValid = false;
+        }
 
+        // Address
+        const address = $('#registerAddress').val().trim();
+        if (!address) {
+            $('#registerAddress').after('<div class="error text-danger mt-1">العنوان مطلوب</div>');
+            isValid = false;
+        }
+
+        // Submit if valid
+        if (isValid) {
+            // Send data to backend or show success
+            alert("تم التسجيل بنجاح ✅");
+        }
+      });
+
+    // Email Format Validator
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email.toLowerCase());
+    }
 
     //animation
     $(document).ready(function () {
