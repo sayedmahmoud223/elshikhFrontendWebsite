@@ -380,3 +380,17 @@ body {
 }
 
 /*end orders */
+
+/* add to favList */
+
+.fav-btn:hover {
+    background-color: #ffe9ec;
+}
+
+.fav-btn.active {
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+
+/* end add to favList */
